@@ -13,9 +13,9 @@ class JConfig {
 	public $debug_lang = '0';
 	public $dbtype = 'mysql';
 	public $host = 'localhost';
-	public $user = 'naftadig_3wnafta';
-	public $password = '3wnafta123';
-	public $db = 'naftadig_urbano';
+	public $user = 'root';
+	public $password = '000';
+	public $db = 'urbano';
 	public $dbprefix = 'urba_';
 	public $live_site = '';
 	public $secret = '7Z9ebUbvsoVqFVsn';
