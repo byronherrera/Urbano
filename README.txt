@@ -49,4 +49,22 @@
     * Post questions at our forums: http://forum.joomla.org
     * Joomla Resources Directory (JRD): http://resources.joomla.org/tos.html
 
- 
+11- Already have a site but its not built with Joomla 2.5 ?
+    * What's new in Joomla 2.5+ - http://docs.joomla.org/What%27s_new_in_Joomla_2.5
+    * What are the main differences from 1.5 to 2.5+ ? Table of contents: http://docs.joomla.org/Differences_from_Joomla_1.5_to_Joomla_2.5
+    * How to migrate from 1.5.x ? Tutorial: http://docs.joomla.org/Tutorial:Migrating_from_Joomla_1.5_to_Joomla_2.5
+    * Upgrade Instructions: http://docs.joomla.org/Upgrade_Instructions
+    * Convert an existing Web site to Joomla - http://docs.joomla.org/How_to_Convert_an_existing_Web_site_to_a_Joomla!_Web_site
+
+12- Do you want to improve Joomla?
+    * How do you request a feature? http://docs.joomla.org/How_do_you_request_a_feature%3F
+    * How do you report a bug? http://docs.joomla.org/How_do_you_report_a_bug%3F
+    * Get Involved: Joomla! its a community developed software. Join the community at http://www.joomla.org
+    * Are you a Developer? http://docs.joomla.org/Developers
+    * Are you a Web designer? http://docs.joomla.org/Web_designers
+
+Copyright:
+    * Copyright (C) 2005 - 2013 Open Source Matters. All rights reserved.
+    * Credits: http://docs.joomla.org/Joomla_1.6_Credits
+    * Distributed under the GNU General Public License version 2 or later
+    * See Licenses details at http://docs.joomla.org/Joomla_Licenses

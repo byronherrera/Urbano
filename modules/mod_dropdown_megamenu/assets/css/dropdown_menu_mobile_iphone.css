@@ -1,0 +1,228 @@
+/* locnv responsive  */
+#js-meganav{
+    display:block;
+}
+
+ul.level0 li.mega span.mega{
+    display: none;
+}
+
+@media (max-width:768px) and (orientation: portrait) {
+    #js-mainnav{
+	    border-top:none !important;
+	    background:#333333 !important;
+		font-size: 100%;
+    }
+	
+    #js-megamenu-button{
+		color: #FFFFFF;
+		display: block !important;
+		font-weight: bold;
+		font-size:1.4em;
+		padding: 13px 0px !important;
+		cursor: pointer;
+		text-align: center;
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+		text-transform: uppercase;
+		z-index: 4;
+		border:1px solid #666666 !important;
+    }
+	
+    ul.level0{
+        float:none;
+		font-size: 1.1em;
+    }
+    
+    ul.level0 li.mega{
+        float:none;
+        position:relative;
+		background:#333333 !important;
+		border-top:1px solid #666666 !important;
+    }
+	
+	ul.level0 li.over, ul.level0 li.haschild-over{
+        background:#333333 !important;
+	}
+	
+	ul.level1 li.mega{
+	    border-top:1px solid #666666 !important;
+	}
+	
+	ul.level0 li.first{
+	    border-top:none !important;
+	}
+	
+	ul.level1 li.mega a.mega{
+	    padding-left:20px !important;
+	}
+	
+	ul.level2 li.mega a.mega{
+	    padding-left:30px !important;
+	}
+	
+	ul.level3 li.mega a.mega{
+	    padding-left:40px !important;
+	}
+	
+	ul.level4 li.mega a.mega{
+	    padding-left:50px !important;
+	}
+    
+    ul.level0 li.mega a.mega{
+        padding:15px 10px;
+        width:80%;
+    }
+	
+	.js-megamenu {
+		font-size: 1.1em;	
+	}
+    
+    .js-megamenu li.mega .childcontent {
+        height: 100% !important;
+        margin: 0 !important;
+        position: relative;
+        width: 100% !important;
+        overflow:visible !important;
+   }
+   
+   .childcontent-inner-wrap{
+       margin:0px !important;
+   }
+   
+   .childcontent-inner-wrap,
+   .childcontent-inner,.megacol{
+       width:100% !important;
+   }
+   
+   ul.megamenu{
+       margin: 0px !important;
+   }
+   
+   .megacol,.childcontent-inner{
+       border:none !important;
+   }
+   
+   ul.level1 li.over, ul.level1 li.haschild-over{
+       background:none !important;
+   }
+   
+   .childcontent-inner{
+       background:#333333 !important;
+   }
+   
+   ul.level2,ul.level4{
+       margin:0px !important;
+   }
+   
+   ul.level2 li.first{
+       border-top:1px dotted #006699
+   }
+   
+   .group-title .menu-title{
+       font-weight: normal;
+       font-size:100%;
+   }
+   
+   .group-title{
+       border:none !important;   
+   }
+   
+   ul.level0 li.mega a.mega{
+       border:none !important;
+   }
+   
+   ul.level0 li.mega span.mega{
+       display:none;
+   }
+   
+   ul.level0 li.haschild span.mega,
+   ul.level0 li.haschild-over span.mega {
+    display: block;
+    float: right;
+    position: absolute;
+    right: 2px;
+    top:2px;
+    z-index: 99;
+   }
+   
+   ul.level0 li.haschild span.mega,
+   ul.level0 li.haschild-over span.mega{
+       display:block;
+       cursor: pointer;
+   }
+   
+   ul.level0 li.haschild span.mega {
+    background: url("../images/arrow_down.png") no-repeat scroll 100% 0px transparent;
+    display: block !important;
+    text-indent: 9999px;
+/*    margin-top:5px;*/
+    width: 40px;
+    height: 31px;
+   }
+   
+   ul.level1 li.haschild span.mega {
+    background: url("../images/arrow_down.png") no-repeat scroll 100% 0px transparent !important;
+    display: block !important;
+    text-indent: 9999px;
+    /*margin-top:5px;*/
+    width: 40px;
+    height: 31px;
+   }
+   
+   ul.level2 li.haschild span.mega {
+    background: url("../images/arrow_down.png") no-repeat scroll 100% 0px transparent !important;
+    display: block !important;
+    text-indent: 9999px;
+/*    margin-top:5px;*/
+    width: 40px;
+    height: 31px;
+   }
+   
+   ul.level0 li.haschild-over span.mega {
+    background: url("../images/close.png") no-repeat scroll 100% 0 transparent;
+    display: block !important;
+    height: 31px;
+/*    margin-top: 5px;*/
+    text-indent: 9999px;
+    width: 40px;
+  }
+  
+  ul.level1 li.haschild-over span.mega {
+    background: url("../images/close.png") no-repeat scroll 100% 0 transparent;
+    display: block !important;
+    height: 31px;
+/*    margin-top: 5px;*/
+    text-indent: 9999px;
+    width: 40px;
+  }
+  
+  ul.level2 li.haschild-over span.mega {
+    background: url("../images/close.png") no-repeat scroll 100% 0 transparent;
+    display: block !important;
+    height: 31px;
+/*    margin-top: 5px;*/
+    text-indent: 9999px;
+    width: 40px;
+  }
+   
+   ul.level1 li.mega span.mega{
+       display:none;
+   }
+   
+   ul.level1 li.haschild span.mega,
+   ul.level1 li.haschild-over span.mega {
+    display: block;
+    float: right;
+    position: absolute;
+    right: 2px;
+    top:2px;
+    z-index: 99;
+   }
+   
+   ul.level0 li.haschild a.mega span.menu-title, 
+   ul.level0 li.haschild-over a.mega span.menu-title{
+       background:none;
+       padding-left:0px;
+   }
+  
+}
