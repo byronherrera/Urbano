@@ -1,7 +1,13 @@
 .gitignore
 .htaccess
 .idea/*
+<<<<<<< HEAD
 /configuration.php
+=======
+.idea/*.*
+.idea\*
+.idea\*.*
+>>>>>>> ultimo gitignoe
 administrator/cache/*
 administrator/components/com_admin/*
 administrator/components/com_banners/*
