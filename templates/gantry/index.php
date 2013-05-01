@@ -1,6 +1,6 @@
 <?php
 /**
-* @version   $Id: index.php 7321 2013-02-07 05:15:16Z kevin $
+* @version   $Id: index.php 7321 2013-02-07 05:15:16Z  
  * @author RocketTheme http://www.rockettheme.com
  * @copyright Copyright (C) 2007 - 2013 RocketTheme, LLC
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
