@@ -1,6 +1,7 @@
 .gitignore
 .htaccess
 .idea/*
+/configuration.php
 administrator/cache/*
 administrator/components/com_admin/*
 administrator/components/com_banners/*
@@ -419,14 +420,9 @@ joomla.xml
 *.tar
 *.zip
 
-# Logs and databases #
-######################
 *.log
 *.sql
 *.sqlite
-
-# OS generated files #
-######################
 .DS_Store
 .DS_Store?
 ._*
