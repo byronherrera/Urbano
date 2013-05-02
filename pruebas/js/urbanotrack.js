@@ -21,6 +21,8 @@ function inic() {
 
 }
 
+
+
 //oculta o muestra destino dependiendo del pais que ingrese.
 function muestraDestino (country){
     if (country == 'Ecuador') {
@@ -30,3 +32,8 @@ function muestraDestino (country){
     }
 }
 
+/*WEBSERVICE EXTERNO NACIONAL
+http://200.0.230.246/plugins/plugin/getPluginShipper/?cli_codigo=EB330956048&shi_codigo=000506
+
+    WEBSERVICE EXTERNO INTERNACIONAL
+http://clientes.urbano.com.ar/urbano3/intranet_arg/html/internacional/?nro_guia=010-725445*/
