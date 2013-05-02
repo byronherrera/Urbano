@@ -8,7 +8,8 @@ $(document).ready(function () {
 function getCountry() {
 
     var country = geoplugin_countryName();
-    $('#dropdownstuff').val(country);
+    console.log (country);
+    $('#country').val(country);
 
 }
 

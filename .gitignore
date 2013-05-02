@@ -1,6 +1,7 @@
 .gitignore
 .htaccess
 .idea/*
+.idea/*.*
 <<<<<<< HEAD
 /configuration.php
 =======
