@@ -12,17 +12,10 @@ class JConfig {
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysql';
-<<<<<<< HEAD
-	public $host = 'localhost';
-	public $user = 'root';
-	public $password = '000';
-	public $db = 'urbano';
-=======
 	public $host = '127.0.0.1:8889';
 	public $user = 'root';
 	public $password = '000';
 	public $db = 'naftadig_urbano';
->>>>>>> ultimo gitignoe
 	public $dbprefix = 'urba_';
 	public $live_site = '';
 	public $secret = '7Z9ebUbvsoVqFVsn';
