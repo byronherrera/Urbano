@@ -8,10 +8,16 @@
  */
 
 include('geoLocateIp.class.php');
-$ip = $_SERVER['REMOTE_ADDR'];
-echo $ip;
 
 $geo = new IPLocalizador();
-$location = $geo->getData('186.4.241.38','c6e64205550e6bb37ffd2105ba7815a7c39097fad804a45df334c3b0b8c11435');
-print_r( $location);
 
+//Obtener IP:
+$_SERVER["HTTP_CLIENT_IP"]!=""?$ip=$_SERVER["HTTP_CLIENT_IP"]:$ip=$_SERVER["REMOTE_ADDR"];
+//Función de obtención de IP (basado en la web de webhosting.info)
+
+//obtención de código de país:
+$pais = strtolower($geo->getCountry ($ip));
+
+echo json_encode(array(
+    "pais" => $pais
+));

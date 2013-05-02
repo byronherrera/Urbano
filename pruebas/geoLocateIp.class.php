@@ -1,122 +1,34 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Melissa
- * Date: 02/05/13
- * Time: 10:54
- * To change this template use File | Settings | File Templates.
- */
 
 
-
-
-class IPLocalizadorData{
-    var $statusCode; // estado de los datos
-    var $ipAddress;   // IP
-    var $countryCode;  // Código de 2 caracteres del país
-    var $countryName;   // Nombre del país en Inglés
-    var $regionName;    // nombre de la región
-    var $cityName;      // nombre de la ciudad
-    var $zipCode;       // código postal
-    var $latitude;      // latitud
-    var $longitude;     // Longitud
-    var $timeZone;      // Zona horaria
-}
-
-
-class IPLocalizador {
+class IPLocalizador
+{
     /**
      *
      * @param string $ip
-     * @param string $key
      * @return IPLocalizadorData
      */
-    static function getData($ip,$key)
+    static function getCountry($ip_address)
     {
-        if (!$ip) $ip = self::getRealIP();
+        $url = "http://ip-to-country.webhosting.info/node/view/36";
+        $inici = "src=/flag/?type=2&cc2=";
 
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, "POST");
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "ip_address=$ip_address");
 
-        if (!$key)
-            $key = "su llave";
-        $response =   file_get_contents("http://api.ipinfodb.com/v3/ip-city/?key=$key&ip=$ip&format=raw");
+        ob_start();
 
-        $part = split(";", $response);
+        curl_exec($ch);
+        curl_close($ch);
+        $cache = ob_get_contents();
+        ob_end_clean();
 
-        $r = new IPLocalizadorData();
-        $r->statusCode = $part[0];
-        $r->ipAddress = $part[2];
-        $r->countryCode = $part[3];
-        $r->countryName = $part[4];
-        $r->regionName = $part[5];
-        $r->cityName = $part[6];
-        $r->zipCode = $part[7];
-        $r->latitude = $part[8];
-        $r->longitude = $part[9];
-        $r->timeZone = $part[10];
+        $resto = strstr($cache, $inici);
+        $pais = substr($resto, strlen($inici), 1);
 
-        return  $r;
+        return $pais;
     }
-
-    static  function getRealIP()
-    {
-
-        if( $_SERVER['HTTP_X_FORWARDED_FOR'] != '' )
-        {
-            $client_ip =
-                ( !empty($_SERVER['REMOTE_ADDR']) ) ?
-                    $_SERVER['REMOTE_ADDR']
-                    :
-                    ( ( !empty($_ENV['REMOTE_ADDR']) ) ?
-                        $_ENV['REMOTE_ADDR']
-                        :
-                        "unknown" );
-
-            // los proxys van añadiendo al final de esta cabecera
-            // las direcciones ip que van "ocultando". Para localizar la ip real
-            // del usuario se comienza a mirar por el principio hasta encontrar
-            // una dirección ip que no sea del rango privado. En caso de no
-            // encontrarse ninguna se toma como valor el REMOTE_ADDR
-
-            $entries = split('[, ]', $_SERVER['HTTP_X_FORWARDED_FOR']);
-
-            reset($entries);
-            while (list(, $entry) = each($entries))
-            {
-                $entry = trim($entry);
-                if ( preg_match("/^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)/", $entry, $ip_list) )
-                {
-                    // http://www.faqs.org/rfcs/rfc1918.html
-                    $private_ip = array(
-                        '/^0\./',
-                        '/^127\.0\.0\.1/',
-                        '/^192\.168\..*/',
-                        '/^172\.((1[6-9])|(2[0-9])|(3[0-1]))\..*/',
-                        '/^10\..*/');
-
-                    $found_ip = preg_replace($private_ip, $client_ip, $ip_list[1]);
-
-                    if ($client_ip != $found_ip)
-                    {
-                        $client_ip = $found_ip;
-                        break;
-                    }
-                }
-            }
-        }
-        else
-        {
-            $client_ip =
-                ( !empty($_SERVER['REMOTE_ADDR']) ) ?
-                    $_SERVER['REMOTE_ADDR']
-                    :
-                    ( ( !empty($_ENV['REMOTE_ADDR']) ) ?
-                        $_ENV['REMOTE_ADDR']
-                        :
-                        "unknown" );
-        }
-
-        return $client_ip;
-
-    }
-
 }
