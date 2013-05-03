@@ -1,3 +1,4 @@
+var urlDestino = '';
 $(document).ready(function () {
     //alert("Your location is: " + geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
     inic()
@@ -5,35 +6,48 @@ $(document).ready(function () {
 });
 //fin document ready
 
-
 function getCountry() {
-    var country = geoplugin_countryName();
+    // var country = geoplugin_countryName();
+    var country = 'Argentina';
     $('#country').val(country);
     //muestra o oculta destino
-    muestraDestino (country)
+    muestraDestino(country)
+    changedUrl(country);
 }
+
 //inicializa parametros y crea evento change del combo box el cual muestra o oculta dependiendo del pais.
 function inic() {
     $("#destino").hide();
-    $('#country').change(function() {
-        muestraDestino ($("#country option:selected").val())
+    $('#country').change(function () {
+        muestraDestino($("#country option:selected").val())
+        changedUrl($("#country option:selected").val());
     });
-
+    $('#destino').change(function () {
+        changedUrl($("#country option:selected").val());
+    });
 }
-
-
-
 //oculta o muestra destino dependiendo del pais que ingrese.
-function muestraDestino (country){
-    if (country == 'Ecuador') {
+function muestraDestino(country) {
+    if (country == 'Argentina') {
         $("#destino").show('slow');
     } else {
         $("#destino").hide();
     }
 }
 
-/*WEBSERVICE EXTERNO NACIONAL
-http://200.0.230.246/plugins/plugin/getPluginShipper/?cli_codigo=EB330956048&shi_codigo=000506
-
-    WEBSERVICE EXTERNO INTERNACIONAL
-http://clientes.urbano.com.ar/urbano3/intranet_arg/html/internacional/?nro_guia=010-725445*/
+function changedUrl(pais) {
+    $.getJSON('direcciones.json', function (data) {
+        for (i = 0; i < data.data.length; i++) {
+            if (pais == data.data[i].pais) {
+                var selDestino = $('input[name=destino]:checked').val();
+                if (data.data[i].locacion != undefined) {
+                    if (data.data[i].locacion == selDestino) {
+                         urlDestino = data.data[i].direccion;
+                    }
+                } else {
+                     urlDestino = data.data[i].direccion;
+                }
+            }
+        }
+    });
+};
