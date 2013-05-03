@@ -1,6 +1,6 @@
 <?php
 /**
-* @version   $Id: index.php 7321 2013-02-07 05:15:16Z  
+* @version   $Id: index.php 7321 2013-02-07 05:15:16Z kevin $
  * @author RocketTheme http://www.rockettheme.com
  * @copyright Copyright (C) 2007 - 2013 RocketTheme, LLC
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
@@ -36,6 +36,7 @@ $gpreset = str_replace(' ','',strtolower($gantry->get('name')));
 		$gantry->addLess('bootstrap.less', 'bootstrap.css', 6);
         $gantry->addLess('global.less', 'master.css', 8, array('headerstyle'=>$gantry->get('headerstyle','dark')));
 		$gantry->addScript('custom.js');
+		$gantry->addScript('timeliner.js');
 
         if ($gantry->browser->name == 'ie'){
         	if ($gantry->browser->shortversion == 9){
