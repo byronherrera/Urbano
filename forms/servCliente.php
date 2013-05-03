@@ -15,6 +15,7 @@ $mensaje = "";
 		$ciudad= $_POST['ciudad'];
 		$comentario= $_POST['comentario'];
 		$idioma= $_POST['idioma'];
+		$todinamico = $_POST['todinamico'];
 
 //mensaje para admin
 $adminMSG ='<div style="width:650px;margin:0 auto;background:#FFF;border:2px solid #d8001b;">
@@ -74,7 +75,23 @@ $clientMSG = '<div style="width:650px;margin:0 auto;background:#FFF;border:2px s
 </div>';
 
 //Admin mail setup
-$to="camilo@3w.nafta.ec"; //Put your email here
+
+switch ($todinamico) {
+        case "Argentina":
+            $toEmail = "camilo@3w.nafta.ec";
+            break;
+        case "Ecuador":
+            $toEmail = "camilo@3w.nafta.ec";
+            break;
+        case "El Salvador":
+            $toEmail = "camilo@3w.nafta.ec";
+            break;
+        case "Perú":
+            $toEmail = "camilo@3w.nafta.ec";
+            break;
+    }
+
+$to = $toEmail .  ", camilotho@gmail.com"; //Put your email here
 $adminSubject="NUEVA SOLICITUD DE SERVICIO AL CLIENTE | www.urbano.com"; 
 $adminHeaders .= "MIME-Version: 1.0\r\n";
 $adminHeaders .= "Content-Type: text/html; charset=utf-8\r\n";
@@ -120,7 +137,12 @@ $mensaje = "Su mensaje ha sido enviado con éxito, daremos respuesta a su requer
 			return false;
 		return true;
 	}, "Por favor ingrese un valor");
-
+	
+	/*para envios a mails dinámicamente dependiendo del select PAIS*/
+            $("#pais").change(function () {
+                var valorRecuperado = $("#pais").val();
+                $("#todinamico").val(valorRecuperado);
+            })
 
 	/*VALIDATION SECTION*/
 	$("#form_urbano").validate({
@@ -248,7 +270,17 @@ if ($mensaje!=""){
      <td><input id="email" name="email" type="text" onfocus="borrarCampos('E-mail:', this)" onblur="escribirCampos('E-mail:', this)" value="E-mail:" /></td>
    </tr>
     <tr>
-     <td><input id="pais" name="pais" type="text" onfocus="borrarCampos('País:', this)" onblur="escribirCampos('País:', this)" value="País:" /></td>
+     <td>
+     <div class="select_content2">
+         <select id="pais" name="pais">
+             <option value="">Seleccione el país donde requiere nuestros servicios
+             <option value="Argentina">Argentina
+             <option value="Ecuador">Ecuador
+             <option value="El Salvador">El Salvador
+             <option value="Perú"> Perú
+        </select>
+     </div>
+     </td>
    </tr>
     <tr>
      <td><input id="ciudad" name="ciudad" type="text" onfocus="borrarCampos('Ciudad:', this)" onblur="escribirCampos('Ciudad:', this)" value="Ciudad:" /></td>
@@ -264,7 +296,9 @@ if ($mensaje!=""){
       <div>
 		<ul id="alerts" class="alerts"></ul>
 	</div>
-     <input id="enviar" name="enviar" type="submit" value="enviar" /></td>
+     <input id="enviar" name="enviar" type="submit" value="enviar" />
+     <input type="hidden" name="todinamico" id="todinamico" value="">
+     </td>
    </tr>
  </table>
  <br />
