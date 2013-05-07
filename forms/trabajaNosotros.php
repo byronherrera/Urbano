@@ -102,19 +102,19 @@ if ($_POST['enviar']) {
 
     switch ($todinamico) {
         case "Argentina":
-            $toEmail = "camilo@3w.nafta.ec";
+            $toEmail = recuperaEmail(1);
             break;
         case "Ecuador":
-            $toEmail = "camilo@3w.nafta.ec";
+            $toEmail = recuperaEmail(1);
             break;
         case "El Salvador":
-            $toEmail = "camilo@3w.nafta.ec";
+            $toEmail = recuperaEmail(1);
             break;
         case "Perú":
-            $toEmail = "camilo@3w.nafta.ec";
+            $toEmail = w;
             break;
     }
-    $to = recuperaEmail(1);
+    $to = recuperaEmail(2);
 
     $adminSubject = "NUEVA SOLICITUD DE TRABAJE CON NOSOTROS | www.urbano.com";
     $adminHeaders .= "MIME-Version: 1.0\r\n";
@@ -187,7 +187,7 @@ if ($_POST['enviar']) {
                     archivo:{
                         required:true,
                         accept:"pdf|doc?x",
-                        filesize:3048576,
+                        filesize:3048576
                     },
                     nombre:{
                         required:true,
@@ -284,6 +284,18 @@ if ($_POST['enviar']) {
                 Cliente
             <OPTION VALUE="http://www.naftadigital.com/urbano/contacto/submenu/trabaja-con-nosotros.html">Trabaje con
                 Nosotros
+        </SELECT>
+    </FORM>
+</div>
+
+<div class="select_content">
+    <FORM id="pais_sel">
+        <SELECT ONCHANGE="window.parent.location.href = this.options[this.selectedIndex].value;">
+            <OPTION VALUE="#">Seleccione el tipo de requerimiento:
+            <OPTION VALUE="Argentina">Argentina
+            <OPTION VALUE="Ecuador">Ecuador
+            <OPTION VALUE="El Salvador">El Salvador
+            <OPTION VALUE="Perú">Perú
         </SELECT>
     </FORM>
 </div>

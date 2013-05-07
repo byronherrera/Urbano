@@ -907,6 +907,14 @@ ul.menu li a:before, ul.menu li .item:before, ul.menu li .separator:before {
     padding: 10px;
     width: 655px;
 }
+#pais_sel select, #form_urbano select {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #333;
+    font:normal 10pt Arial;
+    padding: 10px;
+    width: 655px;
+}
 .success { 
 	background:#FFF;
 	border:1px solid #D8001A;
