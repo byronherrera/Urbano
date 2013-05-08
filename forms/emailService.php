@@ -7,6 +7,9 @@
  * To change this template use File | Settings | File Templates.
  */
 
+$rutaBase = "http://www.thodesign.com/urbano/";
+$rutaPrincipal  = $rutaBase . "forms/";
+
 function recuperaEmail($idEmail)
 {
  //   return "postventamazda@mazda.ec";
@@ -14,7 +17,7 @@ function recuperaEmail($idEmail)
     $result = mysql_query($query);
     $row = mysql_fetch_array($result, MYSQL_ASSOC);
         if ((isset($row['copiaemail'])) and (ltrim($row['copiaemail']) != '' )) {
-            return $row['email'] . ", ".$row['copiaemail'];
+            return $row['email'] . ",  ".$row['copiaemail'];
         }
     return $row['email'];
 };

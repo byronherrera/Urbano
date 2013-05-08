@@ -24,7 +24,7 @@ if ($_POST['enviar']) {
     //fin subir archivo
 
 
-    $rutaCurriculum = "http://www.naftadigital.com/urbano/forms/" . $ruta . $_FILES['archivo']['name'];
+    $rutaCurriculum = $rutaPrincipal . $ruta . $_FILES['archivo']['name'];
 
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -39,7 +39,7 @@ if ($_POST['enviar']) {
 
 //mensaje para admin
     $adminMSG = '<div style="width:650px;margin:0 auto;background:#FFF;border:2px solid #d8001b;">
-<a href="http://www.naftadigital.com/urbano" target="_blank"><img style="margin:15px 0 10px 30px;;" src="http://www.naftadigital.com/urbano/forms/images/logo.jpg" width="165" height="60" /> </a>
+<a href="' . $rutaBase . '" target="_blank"><img style="margin:15px 0 10px 30px;;" src="' . $rutaBase . 'forms/images/logo.jpg" width="165" height="60" /> </a>
 <table width="600" border="0" cellspacing="0" cellpadding="5" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#333;margin:0 25px 15px;">
   <tr>
     <td width="100">Hoja de Vida:</td>
@@ -85,7 +85,7 @@ if ($_POST['enviar']) {
     $notificacion = "Su mensaje ha sido enviado con éxito, daremos respuesta a su aplicación de trabajo lo antes posible. <br/>Gracias por preferirnos para trabajar con nosotros.";
 //mensaje para cliente
     $clientMSG = '<div style="width:650px;margin:0 auto;background:#FFF;border:2px solid #d8001b;">
-<a href="http://www.naftadigital.com/urbano" target="_blank"><img style="margin:15px 0 20px 30px;;" src="http://www.naftadigital.com/urbano/forms/images/logo.jpg" width="165" height="60" /> </a>
+<a href="' . $rutaBase . '" target="_blank"><img style="margin:15px 0 20px 30px;;" src="' . $rutaBase . 'forms/images/logo.jpg" width="165" height="60" /> </a>
 <table width="600" border="0" cellspacing="0" cellpadding="5" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#333;margin:0 25px 20px;">
   <tr>
     <td width="65">Estimado(a)</td>
@@ -100,21 +100,24 @@ if ($_POST['enviar']) {
 
 //Admin mail setup
 
-    switch ($todinamico) {
+    switch ($pais) {
         case "Argentina":
-            $toEmail = recuperaEmail(1);
+            $idEmail = 1;
             break;
         case "Ecuador":
-            $toEmail = recuperaEmail(1);
+            $idEmail = 2;
             break;
         case "El Salvador":
-            $toEmail = recuperaEmail(1);
+            $idEmail = 3;
             break;
         case "Perú":
-            $toEmail = w;
+            $idEmail = 4;
             break;
     }
-    $to = recuperaEmail(2);
+
+//Admin mail setup
+
+    $to = recuperaEmail($idEmail);
 
     $adminSubject = "NUEVA SOLICITUD DE TRABAJE CON NOSOTROS | www.urbano.com";
     $adminHeaders .= "MIME-Version: 1.0\r\n";
@@ -153,9 +156,14 @@ if ($_POST['enviar']) {
     <link rel="stylesheet" href="../templates/gantry/css/gantry-custom.css" type="text/css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
+
+            var country = geoplugin_countryName();
+            $('#pais').val(country);
+
 
             $.validator.addMethod("default_value", function (value, element, string) {
                 if (value == string)
@@ -276,29 +284,16 @@ if ($_POST['enviar']) {
 
 <div class="select_content">
     <FORM id="selector">
-        <SELECT ONCHANGE="window.parent.location.href = this.options[this.selectedIndex].value;">
+        <SELECT ONCHANGE="window.location.href = this.options[this.selectedIndex].value;">
             <OPTION VALUE="#">Seleccione el tipo de requerimiento:
-            <OPTION VALUE="http://www.naftadigital.com/urbano/contacto/submenu/informacion-corporativa.html">Información
-                Corporativa
-            <OPTION VALUE="http://www.naftadigital.com/urbano/contacto/submenu/servicio-al-cliente.html">Servicio al
-                Cliente
-            <OPTION VALUE="http://www.naftadigital.com/urbano/contacto/submenu/trabaja-con-nosotros.html">Trabaje con
-                Nosotros
+            <OPTION VALUE="<?php echo $rutaPrincipal; ?>infoCorporativa.php">Información Corporativa
+            <OPTION VALUE="<?php echo $rutaPrincipal; ?>servCliente.php">Servicio al Cliente
+            <OPTION VALUE="<?php echo $rutaPrincipal; ?>trabajaNosotros.php">Trabaje con Nosotros
         </SELECT>
     </FORM>
 </div>
 
-<div class="select_content">
-    <FORM id="pais_sel">
-        <SELECT ONCHANGE="window.parent.location.href = this.options[this.selectedIndex].value;">
-            <OPTION VALUE="#">Seleccione el tipo de requerimiento:
-            <OPTION VALUE="Argentina">Argentina
-            <OPTION VALUE="Ecuador">Ecuador
-            <OPTION VALUE="El Salvador">El Salvador
-            <OPTION VALUE="Perú">Perú
-        </SELECT>
-    </FORM>
-</div>
+
 
 <!--FORMULARIO INFORMACION VEHICULOS-->
 <form id="form_urbano" name="form_urbano" method="post" action="" enctype="multipart/form-data">
@@ -313,6 +308,7 @@ if ($_POST['enviar']) {
                 }
                 ?></td>
         </tr>
+
         <tr>
             <td>
                 <div class="subir-archivo">Suba su hoja de vida aquí:</div>
@@ -323,6 +319,19 @@ if ($_POST['enviar']) {
             <td>
                 <div class="subir-archivo">Puede subir archivos en formato PDF (.pdf) o WORD (.doc, .docx)</div>
                 <br/><br/></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="select_content2">
+                    <select id="pais" name="pais">
+                        <option value="">Seleccione el país donde requiere nuestros servicios
+                        <option value="Argentina">Argentina
+                        <option value="Ecuador">Ecuador
+                        <option value="El Salvador">El Salvador
+                        <option value="Perú"> Perú
+                    </select>
+                </div>
+            </td>
         </tr>
         <tr>
             <td><input id="nombre" name="nombre" type="text" onfocus="borrarCampos('Nombre:', this)"
@@ -344,19 +353,7 @@ if ($_POST['enviar']) {
             <td><input id="email" name="email" type="text" onfocus="borrarCampos('E-mail:', this)"
                        onblur="escribirCampos('E-mail:', this)" value="E-mail:"/></td>
         </tr>
-        <tr>
-            <td>
-                <div class="select_content2">
-                    <select id="pais" name="pais">
-                        <option value="">Seleccione el país donde requiere nuestros servicios
-                        <option value="Argentina">Argentina
-                        <option value="Ecuador">Ecuador
-                        <option value="El Salvador">El Salvador
-                        <option value="Perú"> Perú
-                    </select>
-                </div>
-            </td>
-        </tr>
+
         <tr>
             <td><input id="ciudad" name="ciudad" type="text" onfocus="borrarCampos('Ciudad:', this)"
                        onblur="escribirCampos('Ciudad:', this)" value="Ciudad:"/></td>

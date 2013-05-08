@@ -20,7 +20,7 @@ if ($_POST['enviar']) {
 
 //mensaje para admin
     $adminMSG = '<div style="width:650px;margin:0 auto;background:#FFF;border:2px solid #d8001b;">
-<a href="http://www.naftadigital.com/urbano" target="_blank"><img style="margin:15px 0 10px 30px;;" src="http://www.naftadigital.com/urbano/forms/images/logo.jpg" width="165" height="60" /> </a>
+<a href="' . $rutaBase . '" target="_blank"><img style="margin:15px 0 10px 30px;;" src="' . $rutaBase . 'forms/images/logo.jpg" width="165" height="60" /> </a>
 <table width="600" border="0" cellspacing="0" cellpadding="5" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#333;margin:0 25px 15px;">
   <tr>
     <td width="100">Nombre:</td>
@@ -62,7 +62,7 @@ if ($_POST['enviar']) {
     $notificacion = "Su mensaje ha sido enviado con éxito, daremos respuesta a su requerimiento lo antes posible. <br/>Gracias por contactarnos.";
 //mensaje para cliente
     $clientMSG = '<div style="width:650px;margin:0 auto;background:#FFF;border:2px solid #d8001b;">
-<a href="http://www.naftadigital.com/urbano" target="_blank"><img style="margin:15px 0 20px 30px;;" src="http://www.naftadigital.com/urbano/forms/images/logo.jpg" width="165" height="60" /> </a>
+<a href="' . $rutaBase . '" target="_blank"><img style="margin:15px 0 20px 30px;;" src="' . $rutaBase . 'forms/images/logo.jpg" width="165" height="60" /> </a>
 <table width="600" border="0" cellspacing="0" cellpadding="5" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#333;margin:0 25px 20px;">
   <tr>
     <td width="65">Estimado(a)</td>
@@ -93,7 +93,7 @@ if ($_POST['enviar']) {
 //Admin mail setup
 
     $to = recuperaEmail($idEmail);
-    $adminSubject = "NUEVA SOLICITUD DE INFORMACIÓN CORPORATIVA | www.urbano.com";
+    $adminSubject = "NUEVA SOLICITUD DE INFORMACIÓN CORPORATIVA | www.urbano.com"  ;
     $adminHeaders .= "MIME-Version: 1.0\r\n";
     $adminHeaders .= "Content-Type: text/html; charset=utf-8\r\n";
     $adminHeaders .= "From: " . $email . "\n";
@@ -134,10 +134,8 @@ if ($_POST['enviar']) {
 
     <script type="text/javascript">
         $(document).ready(function () {
-
             //cambia pais
             var country = geoplugin_countryName();
-            //var country = 'Argentina';
             $('#pais').val(country);
 
             jQuery.validator.addMethod("default_value", function (value, element, string) {
@@ -235,14 +233,11 @@ if ($_POST['enviar']) {
 
 <div class="select_content">
     <FORM id="selector">
-        <SELECT ONCHANGE="window.parent.location.href = this.options[this.selectedIndex].value;">
+        <SELECT ONCHANGE="window.location.href = this.options[this.selectedIndex].value;">
             <OPTION VALUE="#">Seleccione el tipo de requerimiento:
-            <OPTION VALUE="http://www.naftadigital.com/urbano/contacto/submenu/informacion-corporativa.html">Información
-                Corporativa
-            <OPTION VALUE="http://www.naftadigital.com/urbano/contacto/submenu/servicio-al-cliente.html">Servicio al
-                Cliente
-            <OPTION VALUE="http://www.naftadigital.com/urbano/contacto/submenu/trabaja-con-nosotros.html">Trabaje con
-                Nosotros
+            <OPTION VALUE="<?php echo $rutaPrincipal; ?>infoCorporativa.php">Información Corporativa
+            <OPTION VALUE="<?php echo $rutaPrincipal; ?>servCliente.php">Servicio al Cliente
+            <OPTION VALUE="<?php echo $rutaPrincipal; ?>trabajaNosotros.php">Trabaje con Nosotros
         </SELECT>
     </FORM>
 </div>
