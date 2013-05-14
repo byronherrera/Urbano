@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	<title>LOG-IN CLIENTES</title>
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<!-- JavaScript codes -->
+	<script src="js/jquery-1.js" type="text/javascript"></script>
+	<script src="js/jquery-fullscreen.js" type="text/javascript"></script>
+    <script src="js/template.js" type="text/javascript"></script>
+	<script type="text/javascript">  
+		<!--
+			// You need to specify the size of your background image here (could be done automatically by some PHP code)
+			var FullscreenrOptions = {  width: 1024, height: 749, bgID: '#bgimg' };
+			// This will activate the full screen background!
+			jQuery.fn.fullscreenr(FullscreenrOptions);
+		//-->
+	</script>
+</head>
+<body>
+<img style="width: 1920px; height: 1439.47px; left: 0px; top: -236px;" id="bgimg" src="images/login-1024x749.jpg">
+
+<div id="realBody">
+	<div id="header">
+    	<div id="header-container">
+            <div id="logo">
+            	<div class="logo-img">&nbsp;</div>
+                <h1>Urbano</h1>
+                <a href="http://naftadigital.com/urbano/index.php">&nbsp;</a>
+            </div>
+            <div class="header-text">P&Aacute;GINA DE ACCESO PARA CLIENTES</div>
+        </div><!--end header-container-->
+    </div><!--end header-->
+	
+    <div id="menu">
+    <ul class="nav">
+        <li><a class="inicio" href="http://naftadigital.com/urbano/index.php">INICIO</a></li>
+        <li><a class="urbano" href="#">URBANO</a></li>
+        <li><a class="soluciones" href="#">SOLUCIONES</a></li>
+        <li><a class="casos" href="#">CASOS</a></li>
+        <li><a class="contacto" href="#">CONTACTO</a></li>
+        <li><a class="login" href="#">LOGIN CLIENTES</a></li>
+    </div>
+    
+    <div id="container">
+   	  <div class="login-select">
+        	<div class="login-title">LOG-IN CLIENTES</div>
+            <div class="login-form">
+            	<form id="login" name="login" action="" method="post">
+                	<div class="wrapper-pais">
+					<select name="pais" form="login" id="pais" size="1" onChange="go()">
+                  
+						<option value="#">Seleccione su país de residencia</option>
+                        <option class="argentina" value="http://www.google.com">Clientes Argentina</option>
+						<option class="ecuador" value="http://www.naftadigital.com/urbano">Clientes Ecuador</option>
+                        <option class="el-salvador" value="http://www.google.com">Clientes El Salvador</option>
+                        <option class="peru" value="http://www.google.com">Clientes Perú</option>
+					</select>
+                    </div>
+                    <div class="clr">&nbsp;</div>
+             		<input type="text" name="user" value="Ingrese su usuario" id="user" />
+                    <div class="clr">&nbsp;</div>
+                    <input type="text" name="pass" value="Ingrese su contraseña" id="pass" />
+                    <div class="clr">&nbsp;</div>
+                    <input name="enviar" type="button" value="Enviar" id="enviar"/>
+                </form>
+
+<script type="text/javascript">
+<!--
+function go(){
+location=
+document.login.pais.
+options[document.login.pais.selectedIndex].value
+}
+//-->
+</script>
+ 
+           	  <div class="forget-account">Si olvidó su contraseña o usuario <a href="#">presione aquí.</a></div>
+            </div>
+            <div class="login-footer">
+            	<p>Sitio serguro, estibulum est et purus consequat ac viverra eros pretium. Curabitur facilisis aliquet massa, eu porttitor nulla imperdiet eget. Duis nunc ligula, luctus at porttitor eu, commodo ac tellus.<br />
+In hac habitasse platea dictumst. Nulla facilisi. In ac dui libero. Sed sagittis sagittis nunc vitae lobortis. Suspendisse convallis.</p>
+            </div>
+		</div>
+	</div><!--end container-->
+</div>
+
+
+</body>
+</html>

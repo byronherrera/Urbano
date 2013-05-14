@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Urbano formulario</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <script type='text/javascript' src='js/urbanotrack.js'></script>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+
+</head>
+<body>
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">RASTREA TUS ENVÍOS</a></li>
+        <li><a href="#tabs-2">VÍDEOS CORPORATIVOS</a></li>
+    </ul>
+    <div id="tabs-1">
+        <form action="javascript:envio();">
+            <label for="country">Pais</label>
+            <select id="country" name="country">     
+                <option value="Argentina" selected>Argentina</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Peru">Perú</option>
+            </select><br/>
+
+            <div id="destino">
+                <input type="radio" name="destino" value="Nacional" checked>Nacional<br>
+                <input type="radio" name="destino" value="Internacional">Internacional
+            </div>
+
+
+            <input type="text" name="nro_guia" id="nro_guia" value="010-725445">
+
+            <input type="submit" value="Enviar información">
+            <div id="mensaje"></div>
+
+        </form>
+    </div>
+    <div id="tabs-2">
+        <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+    </div>
+</div>
+</body>
+</html>
