@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<SCRIPT LANGUAGE="JavaScript">
+    function AccesoUsuario()
+    {
+        document.AccesoSistema.submit();
+    }
+    function fija_campo()
+    {
+        if (  typeof(document.AccesoSistema.fija_campo) != null )
+            if (document.AccesoSistema.cli_codigo.value != "") {
+                document.AccesoSistema.pcc_clave.focus();
+            } else
+                document.AccesoSistema.cli_codigo.focus();
+    }
+    function Seleccionar()
+    {
+        document.Destino.submit();
+    }
+    function blockError(){return true;}
+    window.onerror = blockError;
+</SCRIPT>
+<FORM NAME="AccesoSistema" ACTION="AccesoSistema" METHOD="POST">
+    <CENTER><H2><FONT COLOR="navy">BIENVENIDO USUARIO DE CLIENTES OUTSOURCING - MENU PRINCIPAL</FONT></H2></CENTER>
+    <INPUT TYPE="HIDDEN" NAME="Opcion"  VALUE="Menu Inicio">
+    <CENTER><IMG SRC="./images/7484.bmp">
+        <BR>Cliente:<INPUT TYPE="HIDDEN"  NAME="cli_codigo" VALUE="7484      ">PACO COMERCIAL E INDUSTRIAL S.A.
+    </CENTER><BR>Usuario:<INPUT TYPE="HIDDEN"  NAME="res_codigo" VALUE="55        ">MARCELA PENAFIEL
+    <INPUT TYPE="HIDDEN"  NAME="res_clave" VALUE="0foH/AAAAEASEx3cT7DCvhdNYzvhBkNVp/8HygRE2iN">
+    <INPUT TYPE="HIDDEN" NAME="Conexion" VALUE="jdbc:informix-sqli://aplext:2530/dol_paco_com:INFORMIXSERVER=ol_aplext;user=axweb;password=axweb">
+    <INPUT TYPE="HIDDEN" NAME="cli_conexion" VALUE="jdbc:informix-sqli://aplext:2530/dol_paco_com:INFORMIXSERVER=ol_aplext;user=axweb;password=axweb">
+    <INPUT TYPE="HIDDEN" NAME="gl_emp_codigo" VALUE="05">
+    TpS Base de datos:05 PRINCIPAL
+    <BR><hr> <a href="images/Manual.pdf" target="ayuda"><IMG SRC="./images/ayuda.jpg" BORDER="0" >Manual de Usuario</a>
+    <INPUT TYPE="HIDDEN"  NAME="res_nombre" VALUE="MARCELA PENAFIEL                        ">
+    <BR><B>Pedido Normal:</B>
+    <TABLE WIDTH="90%" CENTER>
+        <TR>
+            <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Consolidar" SRC="./images/consolidar.jpg" VALUE="Consolidar/Aprobar" OnClick="javascript:document.AccesoSistema.Opcion.value='Consolidar'"></TD>
+            <TD WIDTH="25%"></TD>
+            <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Consultar Pedido" SRC="./images/consultarpedido.jpg" VALUE="Consultar Pedido" onClick="javascript:document.AccesoSistema.Opcion.value='Consultar Pedido';"></TD>
+            <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Historia Pedido" SRC="./images/historiapedido.jpg" VALUE="Historia Pedido" onClick="javascript:document.AccesoSistema.Opcion.value='Historia Pedido';"></TD>
+        </TR>
+    </TABLE>
+    <BR><B>Administracion:</B>
+    <TABLE WIDTH="90%" CENTER>
+        <TR>
+            <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Cambiar Clave" SRC="./images/cambiarclave.jpg" VALUE="Cambiar Clave" onClick="javascript:document.AccesoSistema.Opcion.value='Cambiar Clave';"></TD>
+            <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Asignar Destinos" SRC="./images/asignardestinos.jpg" VALUE="Asignar Destinos/Estructuras"onClick="javascript:document.AccesoSistema.Opcion.value='Asignar Destinos';"></TD>
+            <TD WIDTH="25%"></TD>
+            <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Asignar Presupuesto" SRC="./images/asignarpresupuesto.jpg" VALUE="Asignar Presupuesto" onClick="javascript:document.AccesoSistema.Opcion.value='Asignar Presupuesto';"></TD>
+        </TR>
+    </TABLE>
+    <BR><B>Estadisticas:</B>
+    <BR><TABLE WIDTH="90%" CENTER>
+    <TR>
+        <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Consumo/Presupuesto" SRC="./images/consumopresupuesto.jpg" VALUE="Consumo/Presupuesto"onClick="javascript:document.AccesoSistema.Opcion.value='Consumo/Presupuesto';"></TD>
+        <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Consumo/Presupuesto Estructura" SRC="./images/consumopresupuestoestructura.jpg" VALUE="Consumo/Presupuesto Estructura"onClick="javascript:document.AccesoSistema.Opcion.value='Consumo/Presupuesto Estructura';"></TD>
+        <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Reportes Consumo" SRC="./images/reporteconsumo.jpg" VALUE="Reporte Consumo" onClick="javascript:document.AccesoSistema.Opcion.value='Reportes Consumo';"></TD>
+        <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Reportes Consumo Estructura" SRC="./images/reporteconsumoestructura.jpg" VALUE="Reporte Consumo Estructura"onClick="javascript:document.AccesoSistema.Opcion.value='Reportes Consumo Estructura';"></TD>
+    </TR>
+    <TR>
+        <TD WIDTH="25%"></TD>
+    </TR>
+    <TR>
+        <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Factura" SRC="./images/factura.jpg" VALUE="Factura" onClick="javascript:document.AccesoSistema.Opcion.value='Factura';"></TD>
+        <TD WIDTH="25%"></TD>
+        <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Portafolio Precio" SRC="./images/precio.jpg" VALUE="Portafolio Precio" onClick="javascript:document.AccesoSistema.Opcion.value='Portafolio Precio';"></TD>
+        <TD WIDTH="25%"></TD>
+    </TR>
+    <TR>
+        <TD WIDTH="25%"></TD>
+        <TD WIDTH="25%"><INPUT TYPE="IMAGE" NAME="Consumo Producto" SRC="./images/consumoproducto.jpg" VALUE="Consumo Producto" onClick="javascript:document.AccesoSistema.Opcion.value='Consumo Producto';"></TD>
+        <TD WIDTH="25%"></TD>
+        <TD WIDTH="25%"></TD>
+    </TR>
+</TABLE>
+    <BR><hr> <a href="http://www.aplext.com" target="_blank">Aplext - Soluciones 2013</a>
+    <BR><a href="AccesoSistema"><IMG SRC="./images/salir.jpg" BORDER="0"></a>
+</FORM>
+
+</body>
+</html>

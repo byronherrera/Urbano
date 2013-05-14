@@ -1,2 +1,0 @@
-window.addEvent("domready",function(){var a=new RokBox({theme:"custom",transition:Fx.Transitions.Quad.easeOut,duration:200,chase:40,"frame-border":0,"content-padding":0,"arrows-height":50,effect:"quicksilver",captions:1,captionsDelay:800,scrolling:0,keyEvents:1,overlay:{background:"#000000",opacity:0.85,duration:200,transition:Fx.Transitions.Quad.easeInOut},defaultSize:{width:640,height:460},autoplay:"true",controller:"true",bgcolor:"#ffffff",youtubeAutoplay:0,youtubeHighQuality:0,vimeoColor:"00adef",vimeoPortrait:0,vimeoTitle:0,vimeoFullScreen:1,vimeoByline:0});
-});
