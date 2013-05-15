@@ -1140,11 +1140,28 @@ label.error{
     color: #555;
     text-align: left;
     padding: 3px 0 0 30px;
-    background:url(../images/iconecuador.png) no-repeat left top;
     float: left;
     width: 50%;
     clear: both;
 }
+
+.ecuador {
+    background:url(../images/iconecuador.png) no-repeat left top;
+}
+
+.argentina {
+    background:url(../images/iconargentina.png) no-repeat left top;
+}
+
+.elsalvador {
+    background:url(../images/iconelsalvador.png) no-repeat left top;
+}
+
+.peru {
+    background:url(../images/iconperu.png) no-repeat left top;
+}
+
+
 .pbitem_leer{
     font-family: 'urbano';
     font-size: 16px;
@@ -1156,3 +1173,5 @@ label.error{
     width: 28%;
 
 }
+
+

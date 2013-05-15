@@ -38,6 +38,7 @@ class PBHArticles {
 		$article->title = $myHelper->getItemTitle($item);
 		$article->image = $myHelper->getItemImage($item);
 		$article->intro = $myHelper->getItemIntro($item);
+        $article->div = $myHelper->getItemDiv($item);
 		$article->share = $myHelper->getShareInfo($item);
 		return $article;
 	}

@@ -2258,7 +2258,7 @@ a [class*=" icon-"] {
 }
 .icon-large:before {
   vertical-align: middle;
-  font-size: 1.33333333333em;
+  font-size: 1.3333333333333em;
 }
 .btn [class^="icon-"],
 .btn [class*=" icon-"],

@@ -22,7 +22,7 @@
 			}
 			if (!empty($article->intro)) {
 				echo '<div class="pbitem_intro">'.$article->intro.'</div>';
-				echo '<div class="pbitem_pais" >País</div>';
+				echo '<div class="pbitem_pais '.$article->div.'" >País</div>';
 				echo '<div class="pbitem_leer" >Leer</div>';
 			}
 			

@@ -117,6 +117,18 @@ class PBHSourceJcontent {
 			return '';
 		}
 	}
+
+    function getItemDiv($item) {
+            $outText = str_replace(array("\t","\n","\r","\r\n"),'', $item->introtext );
+
+            $patron = '/<div class="pais">(.*?)<\/div>/';
+            preg_match_all ($patron, $outText, $matches);
+            if (is_null($matches[1][0])){
+                return "ecuador";
+            } else {
+                return strtolower($matches[1][0]);
+            }
+    }
 	
 	function getPreviewImage($item) {
 		
