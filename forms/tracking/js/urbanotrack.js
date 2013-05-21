@@ -73,7 +73,3 @@ function enviaMensaje() {
         }
     }) ;
 }
-
-function cambiaLogoPais () {
-
-}

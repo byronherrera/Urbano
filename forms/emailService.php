@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-$rutaBase = "http://www.thodesign.com/urbano/";
+$rutaBase = "http://desarrollo.urbano.com.ec/";
 $rutaPrincipal  = $rutaBase . "forms/";
 
 function recuperaEmail($idEmail)

@@ -126,7 +126,7 @@ class PBHSourceJcontent {
             if (is_null($matches[1][0])){
                 return "ecuador";
             } else {
-                return strtolower($matches[1][0]);
+                return $matches[1][0];
             }
     }
 	

@@ -37,7 +37,7 @@ function centrarImagenSuperior(ancho) {
 //DETECTA EL ANCHO DE LA PANTALLA BASADO EN EL BODY
     var body_ancho = jQuery("body").width();
 //CALCULA EL MARGEN NECESARIO PARA CENTRAR EL SLIDER EN ENTEROS
-    console.log (body_ancho)
+    //console.log (body_ancho)
     var margen = parseInt((body_ancho - 1550) / 2);
 //CALCULA EL ANCHO NECESARIO, RESTA EL MARGEN DEL ANCHO DEL BODY
     var slider_ancho = parseInt(body_ancho - margen);
