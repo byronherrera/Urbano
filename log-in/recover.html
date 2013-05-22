@@ -16,15 +16,11 @@
 			var FullscreenrOptions = {  width: 1024, height: 749, bgID: '#bgimg' };
 			// This will activate the full screen background!
 			jQuery.fn.fullscreenr(FullscreenrOptions);
-            
-            
             $(document).ready(function () {
                 //cambia pais
                 var country = geoplugin_countryName();
                 $('#pais').val(country);
             })
-
-
 		//-->
 	</script>
 </head>
@@ -59,7 +55,7 @@
             <div class="login-form">
             	<form id="login" name="login" action="" method="post">
                 	<div class="wrapper-pais">
-					<select name="pais" form="login" id="pais" size="1" onChange="go()">
+					<select name="pais" form="login" id="pais" size="1">
                   
 						<option value="#">Seleccione su país de residencia</option>
                          <option class="argentina" value="Argentina">Argentina

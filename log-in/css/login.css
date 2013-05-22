@@ -55,7 +55,7 @@ body {
 	z-index: 5;				/* Place the new body above the background image */
 	overflow:auto; 			/* restore scrollbars for the content */
 	height:100%;width:100%;	/* Make the new body fill the screen */
-	background: url('../img/raster.png'); /* this is just a fancy raster, you can remove it; I kinda like it though */
+
 }
 /*---Page Style---*/
 /*header*/

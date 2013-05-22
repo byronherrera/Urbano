@@ -1,33 +1,25 @@
 {"data":[
     {
         "pais":"Argentina",
-        "locacion":"Nacional",
-        "direccion":"http://200.0.230.246/plugins/plugin/getPluginShipper/?cli_codigo=",
-        "observacion":""
-    }
-    ,
-    {
-        "pais":"Argentina",
-        "locacion":"Internacional",
-        "direccion":"http://clientes.urbano.com.ar/urbano3/intranet_arg/html/internacional/?nro_guia=",
+        "direccion":"http://clientes.urbano.com.ar/login_wbs?usuario=%%%&clave=$$$&url_back=desarrollo.urbano.com.ec/errorlogin?pais=ar ",
         "observacion":""
     }
     ,
     {
         "pais":"Ecuador",
-        "direccion":"http://197.1.2.119/logistica/pod.aspx?id_numero=",
+        "direccion":"http://clientes.urbano.com.ar/login_wbs?usuario=%%%&clave=$$$&url_back=desarrollo.urbano.com.ec/errorlogin?pais=ar ",
         "observacion":""
     }
     ,
     {
         "pais":"El Salvador",
-        "direccion":"http://clientes.urbano.com.ar/urbano3/intranet_arg/html/internacional/?nro_guia=",
+        "direccion":"http://clientes.urbano.com.ar/login_wbs?usuario=%%%&clave=$$$&url_back=desarrollo.urbano.com.ec/errorlogin?pais=ar ",
         "observacion":""
     }
     ,
     {
         "pais":"Peru",
-        "direccion":"http://clientes.urbano.com.ar/urbano3/intranet_arg/html/internacional/?nro_guia=",
+        "direccion":"http://clientes.urbano.com.ar/login_wbs?usuario=%%%&clave=$$$&url_back=desarrollo.urbano.com.ec/errorlogin?pais=ar ",
         "observacion":""
     }
  ]
