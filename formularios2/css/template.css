@@ -1,0 +1,1156 @@
+@charset "UTF-8";
+
+/*reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+  margin:0;
+  padding:0;
+}
+table {
+  float:left;
+  border-collapse:collapse;
+  border-spacing:0;
+  line-height:32px;
+}
+fieldset,img { 
+  border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+  font-style:normal;
+  font-weight:normal;
+}
+ol,ul {
+  list-style:none;
+}
+caption,th {
+  text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-size:100%;
+  font-weight:normal;
+}
+q:before,q:after {
+  content:'';
+}
+abbr,acronym { border:0;
+}
+/* end reset*/
+
+/*facefonts*/
+@font-face {
+    font-family: 'FiatBold';
+    src: url('fonts/mazda_bd-webfont.eot');
+    src: url('fonts/mazda_bd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/mazda_bd-webfont.woff') format('woff'),
+         url('fonts/mazda_bd-webfont.ttf') format('truetype'),
+         url('fonts/mazda_bd-webfont.svg#FiatBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiatRegular';
+    src: url('fonts/mazda_rg-webfont.eot');
+    src: url('fonts/mazda_rg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/mazda_rg-webfont.woff') format('woff'),
+         url('fonts/mazda_rg-webfont.ttf') format('truetype'),
+         url('fonts/mazda_rg-webfont.svg#MazdaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*globals*/
+body {
+  background: #F2F2F2;
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 12px;
+  color: #4D4D4D;
+}
+
+#top-bar {
+  background: url(../images/top_bar.jpg) repeat-x top left;
+  width: 100%;
+  height: 7px;
+  position: absolute;
+  z-index: 100;
+}
+
+#main-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/*menus*/
+#top-menu {
+  width: 880px;
+  height: 30px;
+  background: url(../images/bg_topmenu.png) repeat-x bottom left;
+  margin: 0px 35px 10px 120px;
+  float: left;
+}
+
+/*top-menu*/
+#top-menu ul.joomla-nav {
+  font-family: "Arial", Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 12px;
+  float: right;
+  margin: 12px 0 0;
+}
+
+#top-menu .joomla-nav li {
+  display: inline-block;
+  text-transform: capitalize;
+  margin: 0 5px;
+}
+
+#top-menu .joomla-nav li a {
+  text-decoration: none;
+  color: #4D4D4D;
+}
+
+#top-menu .joomla-nav li a:hover {
+  transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s; /* Firefox 4 */
+  -webkit-transition: all 0.3s linear 0s; /* Safari and Chrome */
+  -o-transition: all 0.3s linear 0s; /* Opera */
+  text-decoration: none;
+  color: #0080C5;
+}
+
+/*main-menu*/     
+#main-menu {
+  width: 880px;
+  height: 35px;
+  background: #333333 url(../images/bg_menu.jpg) no-repeat top right;
+  margin: 0px 35px 25px 120px;
+  float: left;
+}
+
+/*nivel1*/
+#main-menu .icemegamenu ul#icemegamenu {
+    background: none;
+    display: block;
+  right: 0;
+    list-style: none;
+    margin: 0 15px 0 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    z-index: 101;
+}
+
+#main-menu .icemegamenu ul#icemegamenu li span.icemega_title, #main-menu #subMenusContainer span.icemega_title {
+  font-family: 'MazdaRegular';
+    font-size: 13px;
+}
+
+#main-menu .icemegamenu ul#icemegamenu li {
+    border-right: none;
+    display: block;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+
+
+#subMenusContainer a.iceMenuTitle:hover, #subMenusContainer a.iceMenuTitle:focus, #main-menu #icemegamenu a.mainMenuParentBtnFocused, #subMenusContainer a.subMenuParentBtnFocused, #main-menu #icemegamenu li a.iceMenuTitle:hover, #main-menu #icemegamenu li a.iceMenuTitle:hover span, #main-menu #icemegamenu li a.iceMenuTitle:focus span, #main-menu #icemegamenu li a.iceMenuTitle:focus {
+  background: none !important;
+    color: #0080C5 !important;
+    text-shadow: none !important;
+}
+
+/*nivel2*/
+div#subMenusContainer ul.icesubMenu li div.iceCols li {
+    padding: 0 0 !important;
+}
+
+div#subMenusContainer a.iceMenuTitle, div#subMenusContainer span.separator, div.icemegamenu #icemegamenu ul.icesubMenu li a.iceMenuTitle, div.icemegamenu #icemegamenu ul.icesubMenu li span.separator {
+    min-width: 150px !important;
+}
+
+#subMenusContainer ul.icesubMenu {
+  background: none;
+  border: none;
+}
+
+div#subMenusContainer ul.icesubMenu li div.iceCols li {
+  font-family: 'MazdaRegular';
+  font-size: 9px;
+  color: #666666;
+  text-shadow: none;
+    margin: 2px 0 1px;
+}
+
+div#subMenusContainer ul.icesubMenu li div.iceCols li a {
+  border-radius: 5px 5px 5px 5px;
+  background: #333;
+}
+
+div#subMenusContainer ul.icesubMenu li div.iceCols li a.iceMenuTitle .icemega_title {
+  color: #999999;
+  text-shadow: none;
+}
+
+div#subMenusContainer ul.icesubMenu li div.iceCols li.iceMenuLiLevel_2 a:hover {
+  border-radius: 5px 5px 5px 5px !important;
+  background: #212121 !important;
+}
+
+div#subMenusContainer ul.icesubMenu li div.iceCols li a.subParentBtn, div#subMenusContainer ul.icesubMenu li div.iceCols li a.mainMenuParentBtnFocused, div#subMenusContainer ul.icesubMenu li div.iceCols li a.subMenuParentBtn {
+  border-radius: 5px 5px 5px 5px !important;
+  background: #212121 !important;
+  color: #FFF !important;
+}
+
+div#subMenusContainer ul.icesubMenu li div.iceCols li a:hover .icemega_title {
+  color: #FFF !important;
+}
+
+/*nivel3*/
+.icesubMenu .icemega_cover_module .icemega_modulewrap span.iceModuleTile {
+    color: #333333;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+  /*text-transform: uppercase;*/
+  font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 0px;
+  margin-left: 10px;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+.iceMenuLiLevel_3{
+  background: #FFF;
+  margin: 0 4px !important;
+  padding: 0 5px;
+    width: 210px !important;
+}
+
+.icemega_modulewrap .year {
+  color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+    font-size: 12px;
+  font-style: italic;
+  margin-left: 10px;
+}
+
+.icemega_modulewrap .precio {
+  color: #999;
+    font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+    font-size: 13px;
+  margin: 0px 0 0 10px;
+  font-style: normal;
+}
+
+.icemega_modulewrap img {
+  width: 80%;
+  margin: 0 18px 5px;
+}
+.icemega_modulewrap .links {
+  margin-left: 10px;
+  height: 45px;
+}
+
+.icemega_modulewrap .links a { 
+  background: none !important;
+  text-transform: uppercase;
+  font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #999 !important;
+  font-size: 13px;
+  text-decoration: none;
+  
+}
+.icemega_modulewrap .links .rauda_txt {
+  text-transform: uppercase;
+  font-style: normal;
+  font-family: "Arial", Helvetica, sans-serif !important;
+  color: #999 !important;
+  font-size: 12px;
+  text-decoration: none;
+}
+.iceCols .icemega_modulewrap .links a.menu_autos:hover { 
+  color: #666 !important;
+  background: none !important;
+}
+
+/*nivel 4*/
+.icemega_cover_module {
+  background: #FFF;
+}
+
+/*logo*/
+#logo-wrapper {
+  background: url(../images/logo_wrapper.png) no-repeat bottom left;
+  width: 317px;
+  height: 127px;
+  margin-top: -100px;
+  float: left;
+  position: relative;
+  z-index: 98;
+}
+  
+#logo {
+  margin: 3px 0 0 66px;
+  position: relative;
+  z-index: 99;
+  float: left;
+}
+    
+#logo h1 {
+  background: url(../images/logo_top.png) no-repeat top left;
+  width: 105px;
+  height: 105px;
+
+}
+
+#logo h1 a { 
+  padding: 80px;
+}
+
+/*slider*/
+#slider {
+  width: 920px;
+  margin: -35px 0 0 75px;
+  float: left;
+  position: relative;
+  z-index: 2;
+}
+
+/*modules positions*/  
+#module-a {
+  width: 100%;
+  float: left;
+}
+        
+#social-menu {
+  width: 300px;
+  margin: -30px 0 0 85px;
+  height: 30px;
+  padding-top: 10px;
+  float: left;
+  position: relative;
+  z-index: 97
+}
+#social-menu ul li {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+#social-menu ul li:hover {
+  background-position: bottom left;
+  transition: 0.2s;
+  -moz-transition: 0.2s; /* Firefox 4 */
+  -webkit-transition: 0.2s; /* Safari and Chrome */
+  -o-transition: 0.2s; /* Opera */
+}
+
+#fb a {
+  padding: 80px;
+}
+
+#tw a {
+  padding: 80px;
+}
+
+#yt a {
+  padding: 80px;
+}
+
+/*components & articles*/
+#content {
+  width: 980px;
+  margin: 0 0 0 35px;
+  float: left;
+}
+
+
+
+#module-b {
+  width: 960px;
+  margin: 0 20px;
+  float: left;
+}
+
+.inicio #module-b {
+  margin: 0 0 0 55px;
+}
+    
+#module-c {
+  width: 950px;
+  margin: 10px 50px;
+  float: left;
+}
+
+.inicio #module-c {
+  margin: 10px 0 0 75px;
+}
+
+#module-c .moduletable {
+  margin-right: 5px;
+  float: left;
+}
+
+/*concesionarios*/
+#conce_menu {
+  clear: left;
+  float: left;
+  margin: 10px 0 0 35px;
+    width: 465px;
+}
+.moduletable_conce_menu h3 {
+  font-family: 'FiatBold';
+  font-size: 24px;
+  color: rgb(141,20,34);
+  margin: -10px 0 0;
+}
+.moduletable_conce_menu h2 {
+  font-family: 'FiatBold';
+  font-size: 36px;
+  color: rgb(141,20,34);
+}
+#conce_menu ul.joomla-nav {
+  margin-top: 10px;
+  text-transform: uppercase;
+  width: 320px;
+}
+#conce_menu ul.joomla-nav li {
+  width: 150px;
+  float: left;
+}
+#conce_menu ul.joomla-nav li a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+}
+#conce_menu ul.joomla-nav li a:hover, #conce_menu ul.joomla-nav li#current a {
+  color: rgb(141,20,34);
+}
+#conce_mapa {
+  float: left;
+  margin: -30px 0 20px 20px;
+  width: 480px;
+}
+#foto_sec {
+    float: right;
+    height: 166px;
+  width: 484px;
+    margin: -15px 0 -80px;
+    position: relative;
+    z-index: -5;
+}
+
+/*titulo_blog*/
+
+#articles .blog .subheading-category, #articles .subheading-category {
+  display: none;
+}
+#articles .blog .category-desc {
+  width: 350px;
+  margin: 0 45px;
+  float: left;
+  
+}
+/*category_description*/
+#cat_conce {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+#cat_conce li {
+  width: 130px;
+  text-indent: 22px;
+  margin-top: 5px;
+}
+#cat_conce #col_1 {
+  width: 105px;
+  float: left;
+}
+#cat_conce #col_2 {
+  width: 135px;
+  float: left;
+}
+#cat_conce #col_3 {
+  width: 110px;
+  float: left;
+}
+/*blog_item*/
+#conce {
+  width: 220px;
+}
+#img_conce {
+}
+#btn_conce {
+  width: 100%;
+  height: 20px;
+  margin: 5px 0 10px;
+}
+#btn_conce #left {
+  width: 70%;
+  float: left;
+}
+#btn_conce li {
+  display: inline-block;
+  margin: 0 2px 0 0;
+}
+#btn_conce #right {
+  width: 30%;
+  float: left;
+}
+#btn_conce #right ul{
+  float: right;
+}
+#conce h2{
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgb(141,20,34);
+}
+#txt_conce {
+  text-align: left;
+}
+#articles .items-row {
+  clear: both;
+  width: 940px;
+}
+#articles .item {
+  float: left;
+  margin: 0 15px 15px 0;
+}
+
+/*noticias*/
+.header_menu {
+  margin-left: 40px;
+  width: 400px;
+}
+#module-a .moduletable h3, .moduletable_Dueno h3 {
+  font-family: 'FiatBold';
+  font-size: 24px;
+  color: rgb(141,20,34);
+  margin: -10px 0 0;
+}
+#module-a .moduletable h2, .moduletable_Dueno h2 {
+  font-family: 'FiatBold';
+  font-size: 36px;
+  color: rgb(141,20,34);
+}
+
+.title_noticia {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 16px;
+  color: #4D4D4D;
+}
+.year {
+  color: #4D4D4D;
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 5px; 
+}
+
+/*pagination*/
+.counter {
+  font-family: 'FiatBold';
+  color: #333333;
+}
+.pagination {
+  clear: both;
+  float: right;
+  margin: 0 30px 10px;
+}
+.pagination ul {
+  position: absolute;
+  z-index: 60;
+  margin: -17px -24px;
+}
+.pagination ul li{
+  float: left;
+}
+.pagination li.pagination-prev a, span.pagenav {
+  padding: 20px;
+}
+.pagination li.pagination-next a {
+  padding: 20px;
+}
+/*nosotros*/
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(141,20,34);
+  /*text-transform: uppercase;*/
+  line-height: 32px;
+}
+
+.item-page {
+  text-align: justify;
+}
+/*contactos*/
+.contact {
+  width: 960px;
+  margin: 5px 35px;
+}
+.contact .col_contact{
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(141,20,34);
+  font-size: 13px;
+  padding: 0 56px 15px 0;
+    width: 260px;
+}
+.contact .col_contact a {
+  text-decoration: none;
+  color: rgb(141,20,34);
+}
+.contact .col_contact .title {
+  clear: both;
+  text-transform: uppercase;
+  font-size: 15px;
+  
+}
+.contentpane .wrapper {
+  border: none;
+}
+.contentpane body {
+  background: #FFF;
+}
+label {
+  font-family: 'FiatBold';
+  color: #999;
+  font-size: 15px;
+  margin: 0 0 0 5px ;
+}
+.label_td {
+  height: 30px;
+}
+input[type="text"],input[type="password"], input[type="email"] {
+  background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0 0 5px #EFEFEF;
+    color: #8A8A8A;
+    font: 10pt Arial;
+    padding: 7px 10px;
+    width: 900px;
+  margin: 5px 0;
+}
+
+
+
+#f_taller input[type="text"]{
+  width: 365px;
+}
+textarea {
+  background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0 0 5px #EFEFEF;
+    color: #8A8A8A;
+    font: 10pt Arial;
+    padding: 7px 10px;
+    width: 900px;
+  margin: 5px 0;
+}
+
+input[type="submit"] {
+  font-family: 'FiatBold';
+  color: #000;
+  font-size: 15px;
+  border-radius: 3px;
+  -ms-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  background: #0093D0 url("../images/contactos/btn_enviar.png") no-repeat center right;
+  border: none;
+  width: 130px;
+  height: 30px;
+  cursor: pointer;
+  text-indent: -20px;
+  margin: 10px 0;
+  float: right;
+}
+
+.calcular {
+  font-family: 'FiatBold';
+  color: #000;
+  font-size: 14px;
+  border-radius: 3px;
+  -ms-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  background: #0093D0 url("../images/contactos/btn_enviar.png") no-repeat center right;
+  border: none;
+  width: 130px;
+  height: 30px;
+  cursor: pointer;
+  text-indent: -20px;
+  margin: 10px 0;
+  float: right;
+}
+
+ .button {
+  font-family: 'FiatBold';
+  color: #000;
+  font-size: 15px;
+  border-radius: 3px;
+  -ms-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  background: #0093D0 url("../images/contactos/btn_enviar.png") no-repeat center right;
+  border: none;
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+  text-indent: -20px;
+  margin: 10px 0;
+  float: right;
+}
+
+.validate {
+  font-family: 'FiatBold';
+  color: #000;
+  font-size: 15px;
+  border-radius: 3px;
+  -ms-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  background: #0093D0 url("../images/contactos/btn_enviar.png") no-repeat center right;
+  border: none;
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+  text-indent: -20px;
+  margin: 10px 0;
+}
+
+ .button:hover, input[type="submit"]:hover, .validate:hover {
+   color:#fff;
+ }
+select {
+  background: none;
+  border: none;
+  color: #4D4D4D;
+    font: 10pt Arial;
+  padding: 7px 10px;
+  width: 415px;
+  font-weight: bold;
+}
+
+select#kilometraje, select#taxi_taller {
+  width: 140px;
+}
+
+/*footer*/
+.inicio #footer {
+  width: 820px;
+  margin: 15px 20px 10px 75px;
+}
+#footer {
+  font-size: 11px;
+  width: 850px;
+  margin: 15px 5px 10px 35px;
+  height: 70px;
+  float: left;
+}
+
+#footer .dashed_line {
+  background: url(../images/bg_topmenu.png) repeat-x top left;
+  padding: 4px 0;
+  margin: 3px 25px 0 0;
+  float: left;
+}
+  
+#logo-footer {
+  width: 80px;
+  height: 73px;
+  background: url(../images/logo_footer.png) no-repeat top left;
+  float: left;
+}
+         
+#bottom-bar {
+  background: #262626;
+  width: 100%;
+  height: 7px;
+  float: left;
+}
+/*MAZTRACK*/
+.maztrack_p1, .maztrack_p2{
+  float: left;
+  width: 925px;
+  margin: 10px 0;
+}
+.maztrack_p1_img, .maztrack_p2_img{
+  float: left;
+}
+.maztrack_p1_text {
+  float: left;
+  width: 605px;
+  margin: 5px 0 0 20px;
+}
+.maztrack_p2_text {
+  float: left;
+  width: 605px;
+  margin: 16px 20px 0 0;
+}
+
+/*PREGUNTAS FRECUENTES*/
+.garantia #system-message {
+  display: none;
+}
+
+/*:::::::::::::::::::MI MAZDA:::::::::::::::::::*/
+.componentheading {
+    background: url("../images/bg_topmenu.png") repeat-x scroll left bottom transparent;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.componentheading h2{
+  background: url("../images/bg_titulo.png") no-repeat scroll left top transparent;
+    clear: both;
+    color: #FFFFFF;
+    font-family: 'FiatBold';
+    font-size: 14px;
+    height: 40px;
+    margin: 0 -38px 10px;
+    padding: 13px 20px 0;
+  
+}
+
+#rowAccesorios {
+    float: left;
+    width: 100%;
+}
+
+#itemAccesorio {
+    float: left;
+    margin-left: 15px;
+    width: 280px;
+  margin-bottom: 20px;
+}
+
+#itemAccesorio #titulo {
+    background: url("../images/border_titulo_accesorios.jpg") no-repeat scroll left bottom transparent;
+    padding-bottom: 3px;
+}
+
+#itemAccesorio h3 {
+    color: rgb(141,20,34);
+    font-family: 'FiatBold';
+    font-size: 14px;
+    line-height: 1.1;
+}
+
+a#linkpdf{
+   background: url("../images/btnPdf.png") no-repeat scroll left top transparent;
+   width:136px;
+   height:46px;
+   display:block;
+   color:#CCCCCC;
+   font-family: 'FiatBold';
+   font-size: 14px;
+   text-decoration:none;
+   padding-top:18px;
+   padding-left:145px;
+}
+
+
+a#linkpdf:hover{
+  color: #fff;
+  transition: 0.2s;
+  -moz-transition: 0.2s; /* Firefox 4 */
+  -webkit-transition: 0.2s; /* Safari and Chrome */
+  -o-transition: 0.2s; /* Opera */
+  text-decoration:none;
+
+}
+
+#linkBtn{
+  margin-top: -15px;
+    position: relative;
+    z-index: 2;
+}
+
+#pdfDesc{
+  margin-top:-20px;
+  width:100%;
+  text-align:right;
+}
+
+#contentBoletines{
+  margin-top:10px;  
+}
+#itemBoletin{
+  
+  padding:10px;
+  color:#000000;
+}
+
+#itemBoletin h3{
+  color:rgb(141,20,34);
+  font-weight:bold;
+  font-style:italic;
+  font-size:22px;
+  margin-bottom:5px;
+}
+
+#boletinDesc{
+  float:right;
+  width:778px;  
+}
+
+#thumbBoletin{
+  float:left;
+  width:105px;
+}
+
+#linkBoletines{
+  text-decoration:none;
+  background:#EAEAEA;
+  width:905px;
+  height:130px;
+  border:1px solid #979797;
+  display:block;
+  margin-bottom:20px;
+}
+
+#linkBoletines:hover{
+  background:#DBDBDB;
+}
+
+#infoCliente{
+  font-size:14px;  
+}
+
+#containerChequeos h3, #infoKilometraje{
+  font-style:italic;
+  color:rgb(141,20,34);
+  font-size:14px;
+  margin-bottom:10px;  
+  margin-top:10px;  
+}
+
+#itemChequeos{
+  text-decoration:none;
+  background:#EAEAEA;
+  width:895px;
+  height:30px;
+  border:1px solid #979797;
+  display:block;
+  margin-bottom:10px;
+  padding-top:8px;
+  padding-left:10px;
+  color:#000;
+  font-size:14px;
+}
+
+
+
+#member-registration legend{
+  font-family: 'FiatBold';
+  color: #FFF;
+  font-size: 14px;
+  background: url(../images/bg_titulo.png) no-repeat top left;
+  width: 960px;
+  height: 40px;
+  margin: 0 -38px 10px;
+  padding: 13px 20px 0;
+  float: left;
+}
+
+#datos h2{
+  font-family: 'FiatBold';
+  color: #FFF;
+  font-size: 14px;
+  background: url(../images/bg_titulo.png) no-repeat top left;
+  width: 960px;
+  height: 40px;
+  margin: 0 -38px 10px;
+  padding: 13px 20px 0;
+  float: left;
+}
+
+.select_content1, .select_contentTaller {
+    background: url(../images/btn_select.jpg) no-repeat scroll left top transparent;
+    clear: both;
+    height: 35px;
+    overflow: hidden;
+    width: 390px;
+}
+
+.select_content_mini {
+    background: url(../images/btn_select_mini.jpg) no-repeat scroll left top transparent;
+    clear: both;
+    height: 35px;
+    margin: 0;
+    overflow: hidden;
+    width: 115px;
+}
+
+.camposRegistro{
+  float:left;
+  width:100%;
+  margin-bottom:10px;  
+}
+
+.moduletable_Dueno{
+  font-size:14px;  
+}
+
+.site-map table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    float: left;
+    line-height: 25px;
+    margin: 0 0 40px 40px;
+}
+
+th{font-family:Arial; font-style:italic; font-size:16px; color:#404040; font-weight:bold; text-transform: uppercase; /* force text to uppercase */}
+table td a{text-decoration:none; font-family:Arial; color:#808080; font-style:italic; font-size:13px;}
+table td a:hover{text-decoration:none; color:rgb(141,20,34);}
+td {color:rgb(141,20,34); font-style:italic; font-family:Arial; font-size:13px;}
+.lineamap
+{ width:25px;  background:none;}
+.tdmap{padding-left:22px;}
+
+#formulario{
+  float:left;
+  width:42%;  
+}
+#resultado{
+  float:right;
+  width:45%;  
+}
+
+.campoTxt input[type="text"]{
+  width:94%;  
+}
+.tituloCampos{
+  margin-top:15px;
+  margin-bottom: 5px;  
+}
+
+#textoLegal{
+  clear:both;  
+}
+#textoCarro{
+  height:35px;
+  background:#F2F2F2;
+  font-family: 'FiatBold';
+  color: #0073A7;
+  font-size: 14px;
+  padding-top:15px;
+  padding-bottom:15px;
+  margin-bottom:10px;
+  padding-left:20px;
+}
+
+#imageCarro{
+  text-align:center;
+  margin-bottom:10px;  
+}
+
+#textoResultado table{
+  line-height: 20px;
+}
+
+#login li a{
+  color:#858585;
+  text-decoration:none;  
+}
+
+#login li a:hover{
+  color:rgb(141,20,34);
+}
+
+.campoTxt1{
+  margin-top:10px;
+}
+
+iframe {
+  border: 0px inset;
+}
+#pow-center{
+  width: 1000px;
+  margin: 0 auto;
+}
+#powered {
+    color: #666666;
+    float: right;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    padding-top: 5px;
+  padding-bottom: 5px;
+}
+#powered a {
+  text-decoration: none;
+    color: #666666;
+}
+#powered img{
+  margin: 0 0 -5px 5px;
+}
+
+
+#xmap ul {
+    display : block;
+    list-style : none;
+    margin : 6px;
+    padding : 22px;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: italic;    
+}
+#xmap ul li {
+    margin : 0;
+    padding : 0;
+    background : transparent;
+}
+#xmap a img {
+    border : none;
+}
+#xmap ul.level_0 ul {
+    list-style : none;
+    padding : 0;
+  font-size:13px;
+  color: #808080;
+    font-family: Arial;
+    font-size: 13px;
+    font-style: italic;
+    text-decoration: none;
+}
+#xmap ul.level_0 a {
+   color: #404040;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+  text-decoration:none;
+}
+#xmap ul.level_1 a:hover {
+   color: #404040;
+  text-decoration:none;
+}
+#xmap ul.level_1 li {
+    padding : 1em 3em;
+}
+#xmap .active {
+    font-style : italic;
+  
+}
+#xmap ul.level_1 a {
+   color:#808080;
+   text-decoration:none;
+  font-weight: normal;
+}
+#xmap ul.level_1 a:hover {
+   color: rgb(141,20,34);
+  text-decoration:none;
+}

@@ -7,7 +7,7 @@ mysql_set_charset("utf8");
 $mensaje = "";
 
 //Verifico el Submit
-if ($_POST['enviar']) {
+if (isset($_POST['enviar'])) {
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $empresa = $_POST['empresa'];
@@ -16,8 +16,20 @@ if ($_POST['enviar']) {
     $pais = $_POST['pais'];
     $ciudad = $_POST['ciudad'];
     $comentario = $_POST['comentario'];
-    $idioma = $_POST['idioma'];
+    $idioma = isset_or($_POST['idioma'], "");
     $todinamico = $_POST['todinamico'];
+
+    //variable de idioma
+    $idioma = 'esp';
+
+//Instert to data base table
+    $insert = mysql_query("INSERT INTO urba_form_servCliente (nombre, apellido, empresa, telefono, email, pais, ciudad, comentario, idioma) VALUES ('" . $nombre . "','" . $apellido . "','" . $empresa . "','" . $telefono . "','" . $email . "','" . $pais . "','" . $ciudad . "','" . $comentario . "','" . $idioma . "')") or die(mysql_error());
+    $result = mysql_query("SELECT id  FROM urba_form_servCliente order by id desc limit 1");
+    $row = mysql_fetch_array($result, MYSQL_ASSOC);
+    $id = $row['id'];
+    $cat = 2;
+
+
 
 //mensaje para admin
     $adminMSG = '<div style="width:650px;margin:0 auto;background:#FFF;border:2px solid #d8001b;">
@@ -96,13 +108,14 @@ if ($_POST['enviar']) {
     $to = recuperaEmail($idEmail);
 
     $adminSubject = "NUEVA SOLICITUD DE SERVICIO AL CLIENTE | www.urbano.com";
-    $adminHeaders .= "MIME-Version: 1.0\r\n";
+    $adminHeaders = "MIME-Version: 1.0\r\n";
     $adminHeaders .= "Content-Type: text/html; charset=utf-8\r\n";
-    $adminHeaders .= "From: " . $email . "\n";
+   // $adminHeaders .= "From: " . $email . "\n";
+    $adminHeaders .= "From: web@urbano.com\n";
 
 //Client mail setup
     $clientSubject = "Su mensaje ha sido recibido.";
-    $clientHeaders .= "From: web@urbano.com\n";
+    $clientHeaders = "From: web@urbano.com\n";
     $clientHeaders .= "Reply-To: $to\r\n"; //Put the email to reply
     $clientHeaders .= "MIME-Version: 1.0\r\n";
     $clientHeaders .= "Content-Type: text/html; charset=utf-8\r\n";
@@ -111,11 +124,6 @@ if ($_POST['enviar']) {
     mail($to, $adminSubject, $adminMSG, $adminHeaders); //mail to admin
     mail($email, $clientSubject, $clientMSG, $clientHeaders); //mail to client
 
-//variable de idioma
-    $idioma = 'esp';
-
-//Instert to data base table
-    $insert = mysql_query("INSERT INTO urba_form_servCliente (nombre, apellido, empresa, telefono, email, pais, ciudad, comentario, idioma) VALUES ('" . $nombre . "','" . $apellido . "','" . $empresa . "','" . $telefono . "','" . $email . "','" . $pais . "','" . $ciudad . "','" . $comentario . "','" . $idioma . "')") or die(mysql_error());
 
 //mensaje enviado con éxito	
     $mensaje = "Su mensaje ha sido enviado con éxito, daremos respuesta a su requerimiento lo antes posible. <br/>Gracias por contactarnos.";
@@ -309,6 +317,10 @@ if ($_POST['enviar']) {
             <td><textarea id="comentario" name="comentario" cols="40" rows="10"></textarea></td>
         </tr>
         <tr>
+            <td colspan="2" style="cursor:pointer"><a href="' . $url . "?id=" . $id . "&cat=" . $cat . '">Responder</a></td>
+        </tr>
+
+        <tr>
             <td>
                 <div>
                     <ul id="alerts" class="alerts"></ul>
@@ -317,6 +329,7 @@ if ($_POST['enviar']) {
                 <input type="hidden" name="todinamico" id="todinamico" value="">
             </td>
         </tr>
+
     </table>
     <br/>
 </form>

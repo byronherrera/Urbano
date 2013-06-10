@@ -9,6 +9,7 @@
 
 $rutaBase = "http://desarrollo.urbano.com.ec/";
 $rutaPrincipal  = $rutaBase . "forms/";
+$url = $rutaBase . "formularios2/adminAnswer.php";
 
 function recuperaEmail($idEmail)
 {
@@ -21,3 +22,9 @@ function recuperaEmail($idEmail)
         }
     return $row['email'];
 };
+
+
+function isset_or(&$check, $alternate = NULL)
+{
+    return (isset($check)) ? $check : $alternate;
+}

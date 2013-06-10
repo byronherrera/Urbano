@@ -23,7 +23,7 @@ $gantry->init();
 	<html xml:lang="<?php echo $gantry->language; ?>" lang="<?php echo $gantry->language;?>" >
 		<head>
 			<?php if ($gantry->get('layout-mode') == '960fixed') : ?>
-			<meta name="viewport" content="width=960px">
+			<meta name="viewport" content="width=960">
 			<?php elseif ($gantry->get('layout-mode') == '1200fixed') : ?>
 			<meta name="viewport" content="width=1200px">
 			<?php else : ?>
