@@ -27,8 +27,13 @@ $(document).ready(function() {
 
     function getCountry() {
         var country = geoplugin_countryName();
-        if ((country == "Ecuador") || (country == "Ecuador") || (country == "Ecuador") || (country == "Ecuador")) {}
-        jQuery('#pais').val(country);
+        if ((country == "Ecuador") || (country == "Argentina") || (country == "Peru") || (country == "El Salvador")) {
+            jQuery('#pais').val(country);
+        } else {
+            country =  "Ecuador";
+            jQuery('#pais').val(country);
+        }
+        
         //muestra o oculta destino
 
         changedUrl(country);

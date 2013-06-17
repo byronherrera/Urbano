@@ -24,6 +24,13 @@ $db="fansitef_mutualista";
 $conexion = conectar($dbhost, $dbusuario, $dbpassword, $db);
 
 
+
+$query = "SELECT * FROM tab_form";
+$result = mysql_query($query);
+while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+    print_r($row);
+};
+
 function conectar($servidor, $usuario, $password, $base_datos)
 {
     if (!($link = mysql_connect($servidor, $usuario, $password))) {
